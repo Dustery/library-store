@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add new book</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+        table {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/books}" th:object="${book}">
+<table>
+    <tr>
+        <td>
+            <label for="title">Название книги: </label>
+        </td>
+        <td>
+            <input type="text" th:field="*{title}" id="title"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="author">Автор: </label>
+        </td>
+        <td>
+            <input type="text" th:field="*{author}" id="author"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="year">Год издания: </label>
+        </td>
+        <td>
+            <input type="text" th:field="*{year}" id="year"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="price">Цена: </label>
+        </td>
+        <td>
+            <input type="text" th:field="*{price}" id="price"/>
+        </td>
+    </tr>
+    <tr align="center">
+        <td colspan="2">
+            <input type="submit" value="Сохранить"/>
+        </td>
+    </tr>
+</table>
+</form>
+</body>
+</html>
